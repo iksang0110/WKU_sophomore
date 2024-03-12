@@ -32,4 +32,4 @@ git clone https://github.com/your_username/your_repository_name.git
 이 프로젝트는 MIT 라이선스 하에 제공됩니다.
 
 📩 문의하기
-수업이나 저장소에 관한 궁금한 점이 있다면, [이메일 주소]로 연락주세요!
+수업이나 저장소에 관한 궁금한 점이 있다면, [wjddlrtkd0110@naver.com]로 연락주세요!
