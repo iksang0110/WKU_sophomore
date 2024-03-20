@@ -1,0 +1,9 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/02.011x/Documents/GitHub/WKU_sophomore/C/data'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _insertElement, symObjAddr: 0x0, symBinAddr: 0x100000C00, symSize: 0x180 }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _insertElement, symObjAddr: 0x0, symBinAddr: 0x100000C00, symSize: 0x180 }
+  - { offsetInCU: 0xD1, offset: 0xD1, size: 0x8, addend: 0x0, symName: _deleteElement, symObjAddr: 0x180, symBinAddr: 0x100000D80, symSize: 0xF0 }
+  - { offsetInCU: 0x146, offset: 0x146, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x270, symBinAddr: 0x100000E70, symSize: 0xC6 }
+...
