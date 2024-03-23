@@ -7,6 +7,7 @@ int insertElement(int **L, int *n, int *maxSize, int x) {
     if (*n == *maxSize) { // 배열이 가득 차면
         *maxSize += 2; // 배열 크기 2 증가
         *L = (int *)realloc(*L, (*maxSize) * sizeof(int)); // 배열 크기 조정
+        printf("\n배열 크기가 %d로 늘어났습니다.\n", *maxSize); // 메모리 크기 변화 출력
     }
 
     int i, k = 0, move = 0;
@@ -53,10 +54,9 @@ int main(void) {
         insertElement(&list, &size, &maxSize, initialValues[i]);
     }
 
-    printf("\n삽입 전 선형 리스트: ");
+  printf("\n삽입 전 선형 리스트: ");
     for (int i = 0; i < size; i++) printf("%3d", list[i]);
     printf("\n원소의 개수: %3d\n", size);
-
     move = insertElement(&list, &size, &maxSize, 35);
     printf("\n삽입 후 선형 리스트: ");
     for (int i = 0; i < size; i++) printf("%3d", list[i]);
