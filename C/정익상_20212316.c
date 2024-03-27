@@ -8,7 +8,8 @@
 //int *maxSize = 배열의 최대 크기를 나타내는 변수의 주소를 가리킴. 배열이 가득 찼을때 크기를 조정 해야하는 경우, 이 포인터로 최대크기 업데이트.
 //v 1.2
 //배열 크기가 늘어난걸 표시해주면 좋을 것 같아 추가
-
+//realloc 함수 말고 malloc 함수를 이용해서 로직 구현
+//포인터 타입을 캐스팅하는 것이 좋은 습관이 아니라는 정보 습득, 수정 (https://stackoverflow.com/questions/605845/should-i-cast-the-result-of-malloc)
 #include <stdio.h>
 #include <stdlib.h> // 동적 메모리 할당을 위해 추가
 
@@ -16,11 +17,15 @@
 
 int insertElement(int **L, int *n, int *maxSize, int x) {
     if (*n == *maxSize) { // 배열이 가득 차면
-        *maxSize += 2; // 배열 크기 2 증가
-        *L = (int *)realloc(*L, (*maxSize) * sizeof(int)); // 배열 크기 조정
-        printf("\n배열 크기가 %d로 늘어났습니다.\n", *maxSize); // 메모리 크기 변화 출력
+        *maxSize += 2; // 배열 크기 2 증가시키기
+        int *newL = malloc((*maxSize) * sizeof(int)); // 새 배열 크기로 메모리 할당하는 코드
+        for (int i = 0; i < *n; i++) {
+            newL[i] = (*L)[i]; // 데이터 복사하기
+        }
+        free(*L); // 기존 배열 메모리 해제하기
+        *L = newL; // 새 배열 주소 업데이트하기
+        printf("\n배열 크기가 %d로 늘어났습니다.\n", *maxSize);
     }
-
     int i, k = 0, move = 0;
     for (i = 0; i < *n - 1; i++) {
         if ((*L)[i] <= x && x <= (*L)[i + 1]) {
@@ -34,7 +39,7 @@ int insertElement(int **L, int *n, int *maxSize, int x) {
         move++;
     }
     (*L)[k] = x;
-    (*n) += 1; // 원소 삽입 후 사이즈 증가
+    (*n) += 1; // 원소 삽입 후 사이즈 증가시키기 
     return move;
 }
 
@@ -46,29 +51,29 @@ int deleteElement(int *L, int *n, int x) {
             break;
         }
     }
-    if (i == *n) return 0; // 원소를 찾지 못한 경우, 이동 없음
+    if (i == *n) return 0; // 원소를 찾지 못한 경우, 이동 없음 
     for (i = k; i < *n - 1; i++) {
         L[i] = L[i + 1];
         move++;
     }
-    (*n) -= 1; // 원소 삭제 후 사이즈 감소
+    (*n) -= 1; // 원소 삭제 후 사이즈 감소시키기 
     return move;
 }
 
 int main(void) {
-    int *list = (int *)malloc(INIT_MAX * sizeof(int)); // 동적 배열 할당
-    int move, size = 0, maxSize = INIT_MAX; // 초기 원소 개수 0, 최대 크기 INIT_MAX
+    int *list = malloc(INIT_MAX * sizeof(int)); // 동적 배열 할당
+    int move, size = 0, maxSize = INIT_MAX; // 초기 원소 개수 0, 최대 크기 INIT_MAX로 선정
 
-    // 초기 값 할당
-    int initialValues[] = {10, 20, 30, 40, 50, 60};
+    // 초기 값 할당은 자료대로
+    int initialValues[] = {10, 20, 40, 50, 60, 70};
     for (int i = 0; i < 6; i++) {
         insertElement(&list, &size, &maxSize, initialValues[i]);
     }
 
   printf("\n삽입 전 선형 리스트: ");
     for (int i = 0; i < size; i++) printf("%3d", list[i]);
-    printf("\n원소의 개수: %3d\n", size);
-    move = insertElement(&list, &size, &maxSize, 35);
+    printf("\n원소의 개수: %d\n", size);
+    move = insertElement(&list, &size, &maxSize, 30);
     printf("\n삽입 후 선형 리스트: ");
     for (int i = 0; i < size; i++) printf("%3d", list[i]);
     printf("\n원소의 개수: %d\n", size);
@@ -84,7 +89,7 @@ int main(void) {
         printf("\n자리 이동 횟수: %d\n", move);
     }
 
-    free(list); // 동적 할당된 메모리 해제
+    free(list); // 동적 할당된 메모리 해제시키기
     getchar();
     return 0;
 }
