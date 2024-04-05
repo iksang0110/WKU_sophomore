@@ -16,7 +16,7 @@
 #define INIT_MAX 6
 
 int insertElement(int **L, int *n, int *maxSize, int x) {
-    if (*n == *maxSize) { // 배열이 가득 차면
+    if (*n == *maxSize) { // 배열이 가득 차면,
         *maxSize += 2; // 배열 크기 2 증가시키기
         int *newL = malloc((*maxSize) * sizeof(int)); // 새 배열 크기로 메모리 할당하는 코드
         for (int i = 0; i < *n; i++) {
