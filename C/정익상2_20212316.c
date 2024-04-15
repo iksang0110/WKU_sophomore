@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <ctype.h>
 
 typedef char element; // 스택 원소(element)의 자료형을 char로 정의
 
@@ -35,7 +34,7 @@ element pop() {
     element item;
     stackNode* temp = top;
     if (isStackEmpty()) {
-        printf("\n\n Stack is empty !\n");
+        printf("\n\n 스텍이 비어있습니다.\n");
         return 0;
     } 
     else {
@@ -87,7 +86,7 @@ void infixChangePostfix(char* infix, char* postfix) {
             }
         } 
         else { // 잘못된 문자를 만났을 때
-            printf("Invalid expression.\n");
+            printf("식에 잘못된 문자가 있습니다.\n");
             exit(1);
         }
         item = infix[++i];
