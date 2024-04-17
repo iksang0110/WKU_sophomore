@@ -54,7 +54,7 @@ int precedence(char operator) {
     }
 }
 //중위 -> 후위 변환 함수 
-void infixChangePostfix(char* infix, char* postfix) {
+void infixChangePostfix(char *infix, char *postfix) {
     int i = 0, j = 0;
     char item, x;
     push('(');               // '('를 스택에 푸시하고 식의 끝에 ')'를 추가
@@ -94,7 +94,7 @@ void infixChangePostfix(char* infix, char* postfix) {
     postfix[j] = '\0'; // 문자열 끝을 나타내는 '\0' 추가
 }
 
-element evalPostfix(char* exp) { 
+element evalPostfix(char *exp) { 
     int opr1, opr2, value, i = 0;
     int length = strlen(exp);
     char symbol;
