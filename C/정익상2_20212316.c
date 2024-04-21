@@ -121,14 +121,15 @@ element evalPostfix(char *exp) {
 }
 
 int main(void) {
-    char infix[100] = "3+5*6-2/1"; // 입력 중위 표기식 (test중위 식들 : 7+3*(5-2)+4, 3+2+4+*5+3/1, ((3+5)*(7-3)) )
+    int result;
+    char express[100] = "3+5*6-2/1"; // 입력 중위 표기식 (test중위 식들 : 7+3*(5-2)+4, 3+2+4+*5+3/1, ((3+5)*(7-3)) )
     char postfix[100] = "";        // 후위 표기식으로 변환될 배열
 
-    printf("중위 표기식: %s\n", infix);
-    infixChangePostfix(infix, postfix);
+    printf("중위 표기식: %s\n", express);
+    infixChangePostfix(express, postfix);
     printf("후위 표기식: %s\n", postfix);
 
-    int result = evalPostfix(postfix);
+    result = evalPostfix(postfix);
     printf("연산 결과 => %d\n", result);
 
     getchar();
