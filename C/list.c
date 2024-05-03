@@ -51,23 +51,23 @@
 
 // in
 
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+// #define _CRT_SECURE_NO_WARNINGS
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
 
-typedef struct ListNode {
-    char data[4];
-    struct ListNode* link;
+// typedef struct ListNode {
+//     char data[4];
+//     struct ListNode* link;
 
-}ListNode;
+// }ListNode;
 
-typedef struct {
-    listNode* head;
+// typedef struct {
+//     listNode* head;
 
-}linkedList_h;
+// }linkedList_h;
 
-linkedList_h* craeteLinkedList_h(void) {
-    linkedList_h* L;
-    L= (linkedList_h*)
-}
+// linkedList_h* craeteLinkedList_h(void) {
+//     linkedList_h* L;
+//     L= (linkedList_h*)
+// }
