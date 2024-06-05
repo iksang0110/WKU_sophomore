@@ -5,7 +5,6 @@ public class Product {
     private int quantity;
     private String category;
 
-    // 필요한 생성자 추가
     public Product(int productID, String name, double price, int quantity, String category) {
         this.productID = productID;
         this.name = name;
@@ -14,10 +13,8 @@ public class Product {
         this.category = category;
     }
 
-    // 기본 생성자
     public Product() {}
 
-    // Getter 및 Setter 메서드
     public int getProductID() {
         return productID;
     }

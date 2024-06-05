@@ -2,18 +2,17 @@ public class User {
     private int userID;
     private String name;
     private String role;
+    private String password;
 
-    // 필요한 생성자 추가
-    public User(int userID, String name, String role) {
+    public User(int userID, String name, String role, String password) {
         this.userID = userID;
         this.name = name;
         this.role = role;
+        this.password = password;
     }
 
-    // 기본 생성자
     public User() {}
 
-    // Getter 및 Setter 메서드
     public int getUserID() {
         return userID;
     }
@@ -36,5 +35,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
