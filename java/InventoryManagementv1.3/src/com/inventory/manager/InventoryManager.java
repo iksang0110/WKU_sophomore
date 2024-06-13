@@ -6,7 +6,7 @@ import com.inventory.model.UserInterface;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date; // 추가된 부분
+import java.util.Date;
 import java.util.List;
 
 public class InventoryManager {
@@ -19,7 +19,7 @@ public class InventoryManager {
         products = new ArrayList<>();
         users = new ArrayList<>();
         // 관리자 추가
-        users.add(new User(1234, "20212316 정익상", "관리자", "0000"));
+        users.add(new User(1234, "20212316정익상 ", "관리자", "0000"));
         // 프로그램 시작 시 파일에서 데이터 로드
         try {
             loadProductsFromFile(productFile);
@@ -76,7 +76,7 @@ public class InventoryManager {
 
     public void saveProductsToFile() {
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("products.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(productFile));
             for (Product product : products) {
                 bw.write(product.getProductID() + "," +
                          product.getName() + "," +
