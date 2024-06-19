@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>주사위 굴리기 게임</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            margin: 20px;
+        }
+        #dice {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: 20px auto;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px; /* 모서리를 둥글게 */
+            font-size: 48px; /* 숫자 크기 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>주사위 굴리기 게임입니다.</h2>
+        <div id="dice">1</div>
+        <button onclick="rollDice()">주사위 굴리기</button>
+    </div>
+
+    <script>
+        function rollDice() {
+            const dice = document.getElementById('dice');
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            dice.textContent = randomNumber;
+        }
+    </script>
+</body>
+</html>

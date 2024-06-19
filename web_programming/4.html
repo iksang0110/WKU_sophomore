@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>교환 기간 확인</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>구입날짜:</h2>
+    <input type="date" id="purchaseDate">
+    <button onclick="checkExchange()">검사</button>
+
+    <script>
+        function checkExchange() {
+            const purchaseDate = new Date(document.getElementById('purchaseDate').value);
+            const currentDate = new Date();
+            
+            // Check if the purchase date is in the future
+            if (purchaseDate > currentDate) {
+                alert('교환이 불가능합니다');
+                return;
+            }
+            
+            const timeDifference = currentDate - purchaseDate;
+            const daysDifference = timeDifference / (1000 * 3600 * 24);
+
+            if (daysDifference > 30) {
+                alert('교환 기간이 지났습니다');
+            } else {
+                alert('교환 가능합니다');
+            }
+        }
+    </script>
+</body>
+</html>
+
