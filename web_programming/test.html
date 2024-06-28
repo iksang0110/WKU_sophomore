@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .helper-text {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <!-- Login Page -->
+    <div id="login-page" class="w-full max-w-xs mx-auto">
+        <h1 class="text-2xl font-bold text-center mb-6">아무 말 대잔치</h1>
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="login-email">
+                    이메일
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="login-email" type="text" placeholder="이메일을 입력하세요">
+                <p id="login-email-helper" class="helper-text hidden">*올바른 이메일 주소 형식을 입력해주세요(예: example@example.com)</p>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="login-password">
+                    비밀번호
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="login-password" type="password" placeholder="비밀번호를 입력하세요">
+                <p id="login-password-helper" class="helper-text hidden">*비밀번호를 입력해주세요</p>
+            </div>
+            <div class="flex items-center justify-between">
+                <button id="login-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    로그인
+                </button>
+                <a id="go-to-register" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                    회원가입
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Page -->
+    <div id="register-page" class="w-full max-w-xs mx-auto hidden">
+        <h1 class="text-2xl font-bold text-center mb-6">아무 말 대잔치</h1>
+        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4 text-center">
+                <div id="profile-pic" class="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center cursor-pointer">
+                    <span>프로필 사진</span>
+                </div>
+                <input type="file" id="profile-pic-input" class="hidden">
+                <p id="profile-pic-helper" class="helper-text hidden">*프로필 사진을 추가해주세요.</p>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="register-email">
+                    이메일
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="register-email" type="text" placeholder="이메일을 입력하세요">
+                <p id="register-email-helper" class="helper-text hidden">*올바른 이메일 주소 형식을 입력해주세요(예: example@example.com)</p>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="register-password">
+                    비밀번호
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="register-password" type="password" placeholder="비밀번호를 입력하세요">
+                <p id="register-password-helper" class="helper-text hidden">*비밀번호를 입력해주세요</p>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="register-password-confirm">
+                    비밀번호 확인
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="register-password-confirm" type="password" placeholder="비밀번호를 한번 더 입력하세요">
+                <p id="register-password-confirm-helper" class="helper-text hidden">*비밀번호가 다릅니다.</p>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="register-nickname">
+                    닉네임
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="register-nickname" type="text" placeholder="닉네임을 입력하세요">
+                <p id="register-nickname-helper" class="helper-text hidden">*닉네임을 입력해주세요</p>
+            </div>
+            <div class="flex items-center justify-between">
+                <button id="register-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    회원가입
+                </button>
+                <a id="go-to-login" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                    로그인하러 가기
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        document.getElementById('go-to-register').addEventListener('click', function() {
+            document.getElementById('login-page').classList.add('hidden');
+            document.getElementById('register-page').classList.remove('hidden');
+        });
+
+        document.getElementById('go-to-login').addEventListener('click', function() {
+            document.getElementById('register-page').classList.add('hidden');
+            document.getElementById('login-page').classList.remove('hidden');
+        });
+
+        document.getElementById('profile-pic').addEventListener('click', function() {
+            document.getElementById('profile-pic-input').click();
+        });
+
+        document.getElementById('profile-pic-input').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-pic').style.backgroundImage = `url(${e.target.result})`;
+                    document.getElementById('profile-pic').style.backgroundSize = 'cover';
+                    document.getElementById('profile-pic').innerHTML = '';
+                    document.getElementById('profile-pic-helper').classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('login-button').addEventListener('click', function() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            let valid = true;
+
+            if (!email) {
+                document.getElementById('login-email-helper').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('login-email-helper').classList.add('hidden');
+            }
+
+            if (!password) {
+                document.getElementById('login-password-helper').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('login-password-helper').classList.add('hidden');
+            }
+
+            if (valid) {
+                // Perform login action
+                alert('로그인 성공');
+            }
+        });
+
+        document.getElementById('register-button').addEventListener('click', function() {
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const passwordConfirm = document.getElementById('register-password-confirm').value;
+            const nickname = document.getElementById('register-nickname').value;
+            let valid = true;
+
+            if (!email) {
+                document.getElementById('register-email-helper').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('register-email-helper').classList.add('hidden');
+            }
+
+            if (!password) {
+                document.getElementById('register-password-helper').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('register-password-helper').classList.add('hidden');
+            }
+
+            if (password !== passwordConfirm) {
+                document.getElementById('register-password-confirm-helper').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('register-password-confirm-helper').classList.add('hidden');
+            }
+
+            if (!nickname) {
+                document.getElementById('register-nickname-helper').classList.remove('hidden');
+                valid = false;
+            } else {
+                document.getElementById('register-nickname-helper').classList.add('hidden');
+            }
+
+            if (valid) {
+                // Perform registration action
+                alert('회원가입 성공');
+                document.getElementById('register-page').classList.add('hidden');
+                document.getElementById('login-page').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
