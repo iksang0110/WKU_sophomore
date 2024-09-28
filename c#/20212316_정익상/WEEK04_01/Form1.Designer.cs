@@ -30,18 +30,36 @@ namespace WEEK04_01
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(176, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 94);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 553);
+            this.ClientSize = new System.Drawing.Size(594, 533);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,6 +68,8 @@ namespace WEEK04_01
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
 
