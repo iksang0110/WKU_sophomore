@@ -134,3 +134,4 @@ int main() {
     printf("결과: %.6f\n", result);
     return 0;
 }
+
