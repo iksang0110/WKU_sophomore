@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|c:\\users\\\uC815\uC775\uC0C1\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week06_01\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|solutionrelative:week06_01\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{941D43B8-D61B-452A-B695-4AFEDAF1FDF2}|WEEK05_02\\WEEK05_02.csproj|c:\\users\\\uC815\uC775\uC0C1\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week05_02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{941D43B8-D61B-452A-B695-4AFEDAF1FDF2}|WEEK05_02\\WEEK05_02.csproj|solutionrelative:week05_02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|c:\\users\\\uC815\uC775\uC0C1\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week06_01\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|solutionrelative:week06_01\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|c:\\users\\\uC815\uC775\uC0C1\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week06_01\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|solutionrelative:week06_01\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|c:\\users\\\uC815\uC775\uC0C1\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week06_01\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{67261FE3-5EE7-4049-9CD2-0596CB492853}|WEEK06_01\\WEEK06_01.csproj|solutionrelative:week06_01\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{941D43B8-D61B-452A-B695-4AFEDAF1FDF2}|WEEK05_02\\WEEK05_02.csproj|c:\\users\\\uC815\uC775\uC0C1\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week05_02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{941D43B8-D61B-452A-B695-4AFEDAF1FDF2}|WEEK05_02\\WEEK05_02.csproj|solutionrelative:week05_02\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form2.cs",
-              "RelativeDocumentMoniker": "WEEK06_01\\Form2.cs",
-              "ToolTip": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form2.cs",
-              "RelativeToolTip": "WEEK06_01\\Form2.cs",
-              "ViewState": "AgIAAAUAAAC8LzMzM7MvwB8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK05_02\\Form1.cs",
+              "RelativeDocumentMoniker": "WEEK05_02\\Form1.cs",
+              "ToolTip": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK05_02\\Form1.cs",
+              "RelativeToolTip": "WEEK05_02\\Form1.cs",
+              "ViewState": "AgIAACoAAAAAwszMzMz+vzwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:28:41.158Z",
+              "WhenOpened": "2024-10-10T06:00:12.281Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form2.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form2.cs",
-              "RelativeDocumentMoniker": "WEEK06_01\\Form2.cs",
-              "ToolTip": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form2.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "WEEK06_01\\Form2.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:26:59.164Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form1.cs",
-              "RelativeDocumentMoniker": "WEEK06_01\\Form1.cs",
-              "ToolTip": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form1.cs",
-              "RelativeToolTip": "WEEK06_01\\Form1.cs",
-              "ViewState": "AgIAAFEAAAAAfszMzMzwv1kAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:24:49.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form1.cs",
-              "RelativeDocumentMoniker": "WEEK06_01\\Form1.cs",
-              "ToolTip": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK06_01\\Form1.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "WEEK06_01\\Form1.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK05_02\\Form1.cs",
+              "RelativeDocumentMoniker": "WEEK05_02\\Form1.cs",
+              "ToolTip": "C:\\Users\\\uC815\uC775\uC0C1\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK05_02\\Form1.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "WEEK05_02\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T02:05:55.253Z",
+              "WhenOpened": "2024-10-10T05:57:53.333Z",
               "EditorCaption": " [\uB514\uC790\uC778]"
             }
           ]
