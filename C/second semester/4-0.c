@@ -20,3 +20,4 @@ int main(void){
     DeleteCriticalSection(&cs);
     return 0;
 }
+//rrr
