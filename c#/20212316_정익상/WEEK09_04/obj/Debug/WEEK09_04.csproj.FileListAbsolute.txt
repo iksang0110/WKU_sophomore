@@ -1,0 +1,10 @@
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\bin\Debug\WEEK09_04.exe.config
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\bin\Debug\WEEK09_04.exe
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\bin\Debug\WEEK09_04.pdb
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\obj\Debug\WEEK09_04.csproj.AssemblyReference.cache
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\obj\Debug\WEEK09_04.Form1.resources
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\obj\Debug\WEEK09_04.Properties.Resources.resources
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\obj\Debug\WEEK09_04.csproj.GenerateResource.cache
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\obj\Debug\WEEK09_04.csproj.CoreCompileInputs.cache
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\obj\Debug\WEEK09_04.exe
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\c#\20212316_정익상\WEEK09_04\obj\Debug\WEEK09_04.pdb
