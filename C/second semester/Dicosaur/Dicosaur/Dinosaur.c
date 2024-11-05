@@ -2,116 +2,151 @@
 #include<stdbool.h>
 #include<windows.h>
 #include<time.h>
+#include<string.h>
 
-#define DINO_BOTTOM_Y 17      // 공룡의 Y 위치
-#define CACTUS_BOTTOM_Y 25    // 선인장 X 위치
-#define CACTUS_BOTTOM_X 45    // 선인장 Y 위치
+#define DINO_BOTTOM_Y 17
+#define CACTUS_BOTTOM_Y 25
+#define CACTUS_BOTTOM_X 45
+#define CONSOLE_WIDTH 120
+#define CONSOLE_HEIGHT 30
 
-void ClearDino(int dinoY);
-void ClearCactus(int cactusX);
-void CursorView(char show);
-void SetColor(unsigned short text);
-void SetConsoleView();
-void DrawDino(int dinoY);
-void GotoXY(int x, int y);
-void DrawCactus(int cactusX);
-int IsCollision(const int cactusX, const int dinoY);
-int GetKeyDown();
-void DrawGameOver(const int score);
-
-// 색상 
+// 색상 정의
 enum {
-    BLACK,         // 0
-    DARK_BLUE,     // 1
-    DARK_GREEN,    // 2
-    DARK_SKYBLUE,  // 3
-    DARK_RED,      // 4
-    DARK_VOILET,   // 5
-    DAKR_YELLOW,   // 6
-    GRAY,          // 7
-    DARK_GRAY,     // 8
-    BLUE,          // 9
-    GREEN,         // 10
-    SKYBLUE,       // 11
-    RED,           // 12
-    VIOLET,        // 13
-    YELLOW,        // 14
-    WHITE,         // 15
+    BLACK,
+    DARK_BLUE,
+    DARK_GREEN,
+    DARK_SKYBLUE,
+    DARK_RED,
+    DARK_VOILET,
+    DAKR_YELLOW,
+    GRAY,
+    DARK_GRAY,
+    BLUE,
+    GREEN,
+    SKYBLUE,
+    RED,
+    VIOLET,
+    YELLOW,
+    WHITE,
 };
 
-int main() {
-    SetConsoleView();
-    
-    while(true) {
-        //게임 시작시 초기화
-        int isJumping = false;
-        int isBottom = true;
-        const int gravity = 3;
-        
-        int dinoY = DINO_BOTTOM_Y;
-        int cactusX = CACTUS_BOTTOM_X;
-        
-        int score = 0;
-        clock_t start, curr;    //점수 변수 초기화
-        start = clock();        //시작시간 초기화
-        
-        while(true) { //게임 한 판에 대한 루프
-            // 충돌체크 트리의 x값과 공룡의 y값으로 판단
-            if(IsCollision(cactusX, dinoY)) break;
-            
-            // Space키가 눌렸고, 바닥이 아닐때 점프
-            if(GetKeyDown() == ' ' && isBottom) {
-                isJumping = true;
-                isBottom = false;
+// 전역 버퍼 선언
+static char screen[2][CONSOLE_HEIGHT][CONSOLE_WIDTH];
+static int currentBuffer = 0;
+
+// 함수 선언
+void InitScreen();
+void WriteBuffer(int x, int y, const char* str);
+void FlipBuffer();
+void DrawDino(int dinoY);
+void DrawCactus(int cactusX);
+void SetColor(unsigned short text);
+void GotoXY(int x, int y);
+int GetKeyDown();
+int IsCollision(const int cactusX, const int dinoY);
+void DrawGameOver(const int score);
+void SetConsoleView();
+void CursorView(char show);
+
+// 버퍼 초기화 함수
+void InitScreen() {
+    for (int buffer = 0; buffer < 2; buffer++) {
+        for (int y = 0; y < CONSOLE_HEIGHT; y++) {
+            for (int x = 0; x < CONSOLE_WIDTH; x++) {
+                screen[buffer][y][x] = ' ';
             }
-            
-            //점프중이라면 Y를 감소, 점프가 끝났으면 Y를 증가.
-            if(isJumping) dinoY -= gravity;
-            else dinoY += gravity;
-            
-            //Y가 계속해서 증가하는걸 막기위해 바닥을 지정.
-            if(dinoY >= DINO_BOTTOM_Y) {
-                dinoY = DINO_BOTTOM_Y;
-                isBottom = true;
-            }
-            
-            //점프의 맨위를 찍으면 점프가 끝난 상황.
-            if(dinoY <= 3) isJumping = false;
-            
-            //선인장(장애물)이 왼쪽으로 (x를줄) 가도록하고
-            //선인장(장애물)의 위치가 왼쪽 끝으로가면 다시 오른쪽 끝으로 소환.
-            cactusX -= 2;
-            if(cactusX <= 0) cactusX = CACTUS_BOTTOM_X;
-            
-            DrawDino(dinoY);        // 공룡 그리기
-            DrawCactus(cactusX);    // 선인장 그리기
-            
-            curr = clock();            // 현재시간 받아오기
-            if(((curr - start) / CLOCKS_PER_SEC) >= 1) {  // 1초가 넘었을 경우...
-                score++;              // 스코어 UP
-                start = clock();      //시작시간 초기화
-            }
-            
-            Sleep(60);              // Game Speed 설정
-            //system("cls");        // clear
-            ClearDino(dinoY);      // 공룡 지우기
-            ClearCactus(cactusX);  // 선인장(장애물) 지우기
-            
-            SetColor(WHITE);
-            GotoXY(22, 0); printf("Score : %d ", score);    //점수 출력해줌.
-            GotoXY(20, 2); printf("점프 : Speace Key");
+            screen[buffer][y][CONSOLE_WIDTH - 1] = '\0';
         }
-        
-        //게임 오버 메뉴
-        DrawGameOver(score);
     }
-    return 0;
 }
 
+// 버퍼에 문자열 쓰기
+void WriteBuffer(int x, int y, const char* str) {
+    int len = strlen(str);
+    for (int i = 0; i < len && x + i < CONSOLE_WIDTH; i++) {
+        screen[currentBuffer][y][x + i] = str[i];
+    }
+}
+
+// 버퍼 전환 및 화면 출력
+void FlipBuffer() {
+    COORD pos = { 0, 0 };
+    HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    for (int y = 0; y < CONSOLE_HEIGHT; y++) {
+        pos.Y = y;
+        SetConsoleCursorPosition(console, pos);
+        printf("%s", screen[currentBuffer][y]);
+    }
+
+    currentBuffer = !currentBuffer;
+
+    // 새 버퍼 초기화
+    for (int y = 0; y < CONSOLE_HEIGHT; y++) {
+        for (int x = 0; x < CONSOLE_WIDTH; x++) {
+            screen[currentBuffer][y][x] = ' ';
+        }
+        screen[currentBuffer][y][CONSOLE_WIDTH - 1] = '\0';
+    }
+}
+
+// 공룡 그리기
+void DrawDino(int dinoY) {
+    SetColor(SKYBLUE);
+    static int legFlag = true;
+
+    const char* dino[] = {
+        "        $$$$$$$ ",
+        "       $$ $$$$$",
+        "       $$$$$$$$$$",
+        "$      $$$      ",
+        "$$     $$$$$$$  ",
+        "$$$    $$$$$    ",
+        " $$  $$$$$$$$$$$ ",
+        " $$원광대",
+        "  $$$    ",
+        "검소공 $    ",
+        "        $$$$$$$$  ",
+        "        $$$$$$   "
+    };
+
+    for (int i = 0; i < 12; i++) {
+        WriteBuffer(0, dinoY + i, dino[i]);
+    }
+
+    if (legFlag) {
+        WriteBuffer(0, dinoY + 12, "        $   $$$   ");
+        WriteBuffer(0, dinoY + 13, "        $$    ");
+    }
+    else {
+        WriteBuffer(0, dinoY + 12, "        $$$  $     ");
+        WriteBuffer(0, dinoY + 13, "             $$    ");
+    }
+    legFlag = !legFlag;
+}
+
+// 선인장 그리기
+void DrawCactus(int cactusX) {
+    SetColor(GREEN);
+    const char* cactus[] = {
+        "$",
+        "$ $ ",
+        "$$$",
+        "$$$$$",
+        " $ "
+    };
+
+    for (int i = 0; i < 5; i++) {
+        WriteBuffer(cactusX * 2, CACTUS_BOTTOM_Y + i, cactus[i]);
+    }
+}
+
+// 색상 설정
 void SetColor(unsigned short text) {
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), text);
 }
 
+// 커서 위치 이동
 void GotoXY(int x, int y) {
     COORD Pos;
     Pos.X = 2 * x;
@@ -119,87 +154,29 @@ void GotoXY(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
 
+// 키 입력 감지
 int GetKeyDown() {
-    if(_kbhit() != 0) return _getch();
-    return false;
+    if (_kbhit() != 0) {
+        return _getch();
+    }
+    return 0;
 }
 
+// 충돌 감지
 int IsCollision(const int cactusX, const int dinoY) {
-    GotoXY(0, 0);
-    printf("cactusX : %d, dinoY : %d", cactusX, dinoY); //이런식으로 적절한 X, Y를 찾습니다
-    if(cactusX <= 8 && cactusX >= 2 && dinoY > 12) return true;
+    if (cactusX <= 8 && cactusX >= 2 && dinoY > 12) {
+        return true;
+    }
     return false;
 }
 
-void DrawCactus(int cactusX) {
-    SetColor(GREEN);
-    GotoXY(cactusX, CACTUS_BOTTOM_Y);
-    printf("$");
-    GotoXY(cactusX, CACTUS_BOTTOM_Y + 1);
-    printf("$ $ ");
-    GotoXY(cactusX, CACTUS_BOTTOM_Y + 2);
-    printf("$$$");
-    GotoXY(cactusX, CACTUS_BOTTOM_Y + 3);
-    printf("$$$$$");
-    GotoXY(cactusX, CACTUS_BOTTOM_Y + 4);
-    printf(" $ ");
-}
-
-void DrawDino(int dinoY) {
-    SetColor(SKYBLUE);
-    GotoXY(0, dinoY);
-    static int legFlag = true;
-    printf("        $$$$$$$ \n");         // 8, 7, 1
-    printf("       $$ $$$$$\n");          // 7, 2, 1, 6
-    printf("       $$$$$$$$$$\n");        // 7, 9
-    printf("$      $$$      \n");         // 1, 6, 3, 6
-    printf("$$     $$$$$$$  \n");         // 2, 5, 7, 2
-    printf("$$$    $$$$$    \n");         // 3, 3, 5, 5
-    printf(" $$  $$$$$$$$$$$ \n");        // 1, 2, 2, 10, 1
-    printf(" $$");                        // 1, 2
-    SetColor(RED);   printf("원광대");
-    SetColor(SKYBLUE);
-    printf("\n");                         // 3
-    printf("  $$$    \n");               // 2, 3  
-    SetColor(BLUE);  printf("검소공");
-    SetColor(SKYBLUE);
-    printf(" $    \n");                  // 1, 4
-    printf("        $$$$$$$$  \n");      // 4, 8, 4
-    printf("        $$$$$$   \n");       // 5, 6, 5
-    if(legFlag) {
-        printf("        $   $$$   \n");   // 5, 1, 4, 3, 3
-        printf("        $$    ");         // 5, 2, 9
-        legFlag = false;
-    }
-    else {
-        printf("        $$$  $     \n");  // 5, 3, 2, 1, 5
-        printf("             $$    ");    // 10, 2, 4
-        legFlag = true;
-    }
-}
-
-void CursorView(char show) {
-    CONSOLE_CURSOR_INFO ConsoleCursor;
-    ConsoleCursor.bVisible = show;      // 커서를 보일지 말지 결정(0:안보임, 0외:보임)
-    ConsoleCursor.dwSize = 1;           // 커서의 크기를 결정(1~100사이만 가능)
-    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &ConsoleCursor);
-}
-
-void SetConsoleView() {
-    // Console창의 가로 크기와 세로 크기를 지정
-    system("mode con:cols=120 lines=30");
-    // Console창의 제목창 표시
-    system("title 창의실무프로젝트 구글 공룡 게임 [By. YongWun Kim]");
-    // 커서 안보이게...
-    CursorView(false);
-}
-
+// 게임오버 화면
 void DrawGameOver(const int score) {
-    // 화면을 정소 함, cls : Clean Screen의 약자.
-    system("cls"); SetColor(YELLOW);
+    system("cls");
+    SetColor(YELLOW);
     int x = 22, y = 8;
+
     GotoXY(x, y);
-    
     printf("===========================");
     GotoXY(x, y + 1);
     printf("======G A M E O V E R=====");
@@ -207,21 +184,107 @@ void DrawGameOver(const int score) {
     printf("===========================");
     GotoXY(x, y + 5);
     printf("SCORE : %d", score);
-    
+
     printf("\nWnWnWnWnWnWnWnWnWn");
     system("pause");
     system("cls");
 }
 
-void ClearDino(int dinoY) {
-    GotoXY(0, dinoY);
-    for(int i = 0; i < 12; i++) printf("            \n");  // 공백(스페이스바) 16개
-    printf("                ");  // 공백(스페이스바) 16개
+// 커서 설정
+void CursorView(char show) {
+    CONSOLE_CURSOR_INFO ConsoleCursor;
+    ConsoleCursor.bVisible = show;
+    ConsoleCursor.dwSize = 1;
+    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &ConsoleCursor);
 }
 
-void ClearCactus(int cactusX) {
-    for(int i = 0; i < 5; i++) {
-        GotoXY(cactusX, CACTUS_BOTTOM_Y + i);
-        printf("     ");  //공백(스페이스바) 5개
+// 콘솔 설정
+void SetConsoleView() {
+    system("mode con:cols=120 lines=30");
+    system("title 창의실무프로젝트 구글 공룡 게임 [By. YongWun Kim]");
+    CursorView(false);
+}
+
+// 메인 함수
+int main() {
+    SetConsoleView();
+    InitScreen();
+
+    while (true) {
+        // 게임 시작시 초기화
+        bool isJumping = false;
+        bool isBottom = true;
+        const int gravity = 3;
+
+        int dinoY = DINO_BOTTOM_Y;
+        int cactusX = CACTUS_BOTTOM_X;
+
+        int score = 0;
+        clock_t start, curr;
+        start = clock();
+
+        while (true) {
+            // 충돌체크
+            if (IsCollision(cactusX, dinoY))
+                break;
+
+            // 점프 키 감지
+            if (GetKeyDown() == ' ' && isBottom) {
+                isJumping = true;
+                isBottom = false;
+            }
+
+            // 점프 처리
+            if (isJumping) {
+                dinoY -= gravity;
+            }
+            else {
+                dinoY += gravity;
+            }
+
+            // 바닥 충돌 처리
+            if (dinoY >= DINO_BOTTOM_Y) {
+                dinoY = DINO_BOTTOM_Y;
+                isBottom = true;
+            }
+
+            // 점프 최고점 처리
+            if (dinoY <= 3) {
+                isJumping = false;
+            }
+
+            // 장애물 이동
+            cactusX -= 2;
+            if (cactusX <= 0) {
+                cactusX = CACTUS_BOTTOM_X;
+            }
+
+            // 그리기
+            DrawDino(dinoY);
+            DrawCactus(cactusX);
+
+            // 점수 처리
+            curr = clock();
+            if (((curr - start) / CLOCKS_PER_SEC) >= 1) {
+                score++;
+                start = clock();
+            }
+
+            // 점수 표시
+            char scoreStr[20];
+            sprintf(scoreStr, "Score : %d", score);
+            SetColor(WHITE);
+            WriteBuffer(44, 0, scoreStr);
+            WriteBuffer(40, 2, "점프 : Space Key");
+
+            // 화면 업데이트
+            FlipBuffer();
+            Sleep(60);
+        }
+
+        // 게임 오버
+        DrawGameOver(score);
     }
+
+    return 0;
 }
