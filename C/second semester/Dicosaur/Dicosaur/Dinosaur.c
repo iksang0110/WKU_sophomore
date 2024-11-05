@@ -161,7 +161,7 @@ void DrawDino(int dinoY) {
     SetColor(SKYBLUE);
     printf("\n");                         // 3
     printf("  $$$    \n");               // 2, 3  
-    SetColor(BLUE);  printf("검소공");
+    SetColor(BLUE);  printf("컴소공");
     SetColor(SKYBLUE);
     printf(" $    \n");                  // 1, 4
     printf("        $$$$$$$$  \n");      // 4, 8, 4
@@ -189,7 +189,7 @@ void SetConsoleView() {
     // Console창의 가로 크기와 세로 크기를 지정
     system("mode con:cols=120 lines=30");
     // Console창의 제목창 표시
-    system("title 창의실무프로젝트 구글 공룡 게임 [By. YongWun Kim]");
+    system("title 창의실무프로젝트 구글 공룡 게임 [By. iksangJ]");
     // 커서 안보이게...
     CursorView(false);
 }
