@@ -1,23 +1,15 @@
-# 입력: 회의의 수와 각 회의의 시작 시간과 끝나는 시간
-n = int(input()) # 회의의 수
-meetings = []
+# 수열의 길이 입력
+n = int(input())  # 수열의 길이
+arr = list(map(int, input().split()))  # 수열 입력
 
-for _ in range(n):
-    start, end = map(int, input().split())
-    meetings.append((start, end))
+# DP 배열 초기화
+dp = [1] * n  # 각 위치의 LIS 길이를 저장, 최소 길이는 1
 
-# 끝나는 시간을 기준으로 회의를 정렬
-meetings.sort(key=lambda x: (x[1], x[0]))
+# LIS 계산
+for i in range(1, n):
+    for j in range(i):
+        if arr[j] < arr[i]:  # 증가 조건을 만족하는 경우
+            dp[i] = max(dp[i], dp[j] + 1)  # 현재 dp[i]와 dp[j] + 1 중 큰 값 선택
 
-# 그리디 알고리즘 적용
-count = 0
-end_time = 0
-
-for meeting in meetings:
-    start, end = meeting
-    if start >= end_time:
-        # 회의를 선택할 수 있는 경우
-        end_time = end
-        count += 1
-
-print(count)  # 선택된 회의의 최대 개수
+# 최장 증가 부분 수열의 길이 출력
+print(max(dp))
