@@ -28,7 +28,20 @@
     <ClCompile Include="4-3.c" />
     <ClCompile Include="5-1.c" />
     <ClCompile Include="5-2.c" />
+    <ClCompile Include="AddBlockColor.c" />
+    <ClCompile Include="Blocks.c" />
+    <ClCompile Include="ConsoleCursor.c" />
+    <ClCompile Include="Controller.c" />
     <ClCompile Include="Dinosaur.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="Screen.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddBlockColor.h" />
+    <ClInclude Include="Blocks.h" />
+    <ClInclude Include="ConsoleCursor.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Screen.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

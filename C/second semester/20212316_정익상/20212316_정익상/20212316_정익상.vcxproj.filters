@@ -39,5 +39,40 @@
     <ClCompile Include="Dinosaur.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AddBlockColor.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Blocks.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleCursor.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddBlockColor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Blocks.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleCursor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
