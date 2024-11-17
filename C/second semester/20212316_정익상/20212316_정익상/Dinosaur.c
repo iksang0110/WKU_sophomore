@@ -171,7 +171,7 @@ void CursorView(char show) {
 
 void SetConsoleView() {
 	system("mode con:cols=120 lines=30");
-	system("title 창의실무프로젝트 구글 공룡 게임 [By. Yongwun Kim]");
+	system("title 창의실무프로젝트 구글 공룡 게임 [By. iksangJ]");
 	CursorView(false);
 }
 
