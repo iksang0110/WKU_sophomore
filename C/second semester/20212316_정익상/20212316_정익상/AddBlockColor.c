@@ -60,7 +60,7 @@ void addCurrentBlockColor()
 		break;
 	}
 	printf("бс");
-	textcolor(W6HITE);
+	textcolor(WHITE);
 }
 
 void prevAddBlockColor()
