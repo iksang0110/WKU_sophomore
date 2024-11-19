@@ -1,0 +1,16 @@
+﻿  AddBlockColor.c
+  Blocks.c
+  ConsoleCursor.c
+  Controller.c
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\20212316_정익상\Controller.c(113,11): warning C4101: 'Pos' :참조되지 않은 지역 변수입니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\20212316_정익상\Controller.c(282,50): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+  main.c
+  Screen.c
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\20212316_정익상\Screen.c(97,18): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+Controller.obj : error LNK2019: deletePrevBlockGameProcess 함수에서 참조되는 확인할 수 없는 외부 기호
+Controller.obj : error LNK2019: blockFixedGameProcess 함수에서 참조되는 확인할 수 없는 외부 기호
+Controller.obj : error LNK2019: previewBlockGameProcess 함수에서 참조되는 확인할 수 없는 외부 기호
+Controller.obj : error LNK2001: 확인할 수 없는 외부 기호 board
+Screen.obj : error LNK2001: 확인할 수 없는 외부 기호 board
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\x64\Debug\tetris.exe : fatal error LNK1120: 4개의 확인할 수 없는 외부 참조입니다.

@@ -1,0 +1,6 @@
+﻿  3-1.c
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\20212316_정익상\3-1.c(24,22): warning C4047: '함수': 'int *'의 간접 참조 수준이 'int **'과(와) 다릅니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\20212316_정익상\3-1.c(24,22): warning C4024: 'size_add': 형식 및 실제 매개 변수 2의 형식이 서로 다릅니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\20212316_정익상\3-1.c(28,6): warning C4098: 'main': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\20212316_정익상\3-1.c(39,29): warning C4028: 정식 매개 변수 2이(가) 선언과 다릅니다.
+  3-1.vcxproj -> C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316_정익상\x64\Debug\3-1.exe
