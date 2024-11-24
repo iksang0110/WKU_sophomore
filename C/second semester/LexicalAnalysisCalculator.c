@@ -4,6 +4,7 @@
 #include <math.h>
 #include <ctype.h>
 
+
 // **개발 일지**
 // **10월 14일**: 어휘 분석 설계 시작
 // - 초기 구현에서는 숫자와 연산자를 구분하는 간단한 분석기를 작성.
@@ -728,10 +729,40 @@ double expr(void) {
     return result;
 }
 
-// **메인 함수 최종 구현**
+
+// 에러 처리를 위한 전역 변수 추가
+int had_error = 0;
+
+// **메인 함수 수정된 구현**
 int main(void) {
     char buffer[MAX_INPUT_LENGTH];
-    printf("수식을 입력하세요 (끝내려면 빈 줄 입력): \n");
+    printf("수식을 입력하세요 (끝내려면 빈 줄 입력)\n");
+    printf("명령어:\n");
+    printf("  'show' - 시각화 켜기\n");
+    printf("  'hide' - 시각화 끄기\n");
+    printf("  'grammar' - 문법 규칙 보기\n\n");
+    
+    while (1) {
+        printf("> ");
+        
+        if (!fgets(buffer, sizeof(buffer), stdin)) {
+            fprintf(stderr, "입력 오류\n");
+            return 1;
+        }
+        
+        // 명령어 처리
+        if (strncmp(buffer, "show", 4) == 0) {
+            vstack.showVisualization = 1;
+            printf("시각화가 활성화되었습니다.\n");
+            continue;
+        } else if (strncmp(buffer, "hide", 4) == 0) {
+            vstack.showVisualization = 0;
+            printf("시각화가 비활성화되었습니다.\n");
+            continue;
+        } else if (strncmp(buffer, "grammar", 7) == 0) {
+            printGrammarRules();
+            continue;
+        }
     
     while (1) {
         printf("> ");
@@ -762,23 +793,22 @@ int main(void) {
         }
         
         // 파서 상태 초기화
+        had_error = 0;
         initializeState(buffer);
         
         // 계산 수행
-        try {
-            getNextToken();
-            double result = expr();
-            
+        getNextToken();
+        double result = expr();
+        
+        if (!had_error) {
             // 남은 입력 확인
             if (state.currentToken.type != END) {
                 reportError("수식 끝에 예상치 못한 토큰이 있습니다", 
                            state.currentToken.position);
+            } else {
+                // 결과 출력
+                printf("= %.10g\n", result);
             }
-            
-            // 결과 출력
-            printf("= %.10g\n", result);
-        } catch (...) {
-            fprintf(stderr, "예상치 못한 오류가 발생했습니다\n");
         }
         
         // 메모리 정리
