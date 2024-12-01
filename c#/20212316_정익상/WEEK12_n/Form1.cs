@@ -42,5 +42,10 @@ namespace WEEK12_n
             e.Graphics.FillClosedCurve((Brush)solidBrush, points3);
             e.Graphics.DrawClosedCurve(pen, points3);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
