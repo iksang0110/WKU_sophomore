@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|c:\\users\\iksang\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|solutionrelative:week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|c:\\users\\iksang\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|solutionrelative:week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|c:\\users\\iksang\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week13_1\\mp3player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|solutionrelative:week13_1\\mp3player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|c:\\users\\iksang\\desktop\\github\\wku_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week13_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\MP3.csproj|solutionrelative:week13_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\WEEK13_1.csproj|C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\WEEK13_1.csproj|solutionrelative:week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\WEEK13_1.csproj|C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\WEEK13_1.csproj|solutionrelative:week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\WEEK13_1.csproj|C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B53806-64F1-448E-9A96-1756A8C5E44A}|WEEK13_1\\WEEK13_1.csproj|solutionrelative:week13_1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{23F47D65-F937-4823-8502-A97A34DC2019}|WEEK12_n\\WEEK12_n.csproj|C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\week12_n\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,66 +106,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Program.cs",
-              "RelativeDocumentMoniker": "WEEK13_1\\Program.cs",
-              "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Program.cs",
-              "RelativeToolTip": "WEEK13_1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T12:57:09.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Form1.cs",
-              "RelativeDocumentMoniker": "WEEK13_1\\Form1.cs",
-              "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Form1.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "WEEK13_1\\Form1.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T12:51:40.612Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Form1.cs",
-              "RelativeDocumentMoniker": "WEEK13_1\\Form1.cs",
-              "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Form1.cs",
-              "RelativeToolTip": "WEEK13_1\\Form1.cs",
-              "ViewState": "AgIAAEgAAAAADAAAAAAKwE0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T12:51:39.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MP3Player.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\MP3Player.cs",
               "RelativeDocumentMoniker": "WEEK13_1\\MP3Player.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\MP3Player.cs",
               "RelativeToolTip": "WEEK13_1\\MP3Player.cs",
-              "ViewState": "AgIAAGoAAABAyszMzIwwwG8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T02:29:29.2Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK13_1\\Form1.cs",
@@ -189,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK13_1\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK13_1\\Form1.cs",
@@ -200,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK12_n\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "WEEK12_n\\Form1.Designer.cs",
@@ -208,11 +154,12 @@
               "RelativeToolTip": "WEEK12_n\\Form1.Designer.cs",
               "ViewState": "AgIAABIAAAAYmZmZmVkzwCcAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T02:52:02.235Z"
+              "WhenOpened": "2024-11-21T02:52:02.235Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK12_n\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK12_n\\Form1.cs",
@@ -220,44 +167,48 @@
               "RelativeToolTip": "WEEK12_n\\Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T02:48:11.022Z"
+              "WhenOpened": "2024-11-21T02:48:11.022Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK12_n\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK12_n\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK12_n\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK12_n\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T02:48:07.767Z"
+              "WhenOpened": "2024-11-21T02:48:07.767Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_07\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_07\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_07\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK09_07\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:37:18.758Z"
+              "WhenOpened": "2024-10-31T03:37:18.758Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 9,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_06\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_06\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_06\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK09_06\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:32:25.239Z"
+              "WhenOpened": "2024-10-31T03:32:25.239Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_05\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_05\\Form1.cs",
@@ -265,22 +216,24 @@
               "RelativeToolTip": "WEEK09_05\\Form1.cs",
               "ViewState": "AgIAAAwAAAAwMzMzM5MwwCAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:28:26.907Z"
+              "WhenOpened": "2024-10-31T03:28:26.907Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 11,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_05\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_05\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_05\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK09_05\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:27:54.6Z"
+              "WhenOpened": "2024-10-31T03:27:54.6Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 14,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_04\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_04\\Form1.cs",
@@ -288,22 +241,24 @@
               "RelativeToolTip": "WEEK09_04\\Form1.cs",
               "ViewState": "AgIAABAAAAAAYGZmZmb0vyUAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:20:34.054Z"
+              "WhenOpened": "2024-10-31T03:20:34.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK05_02\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK05_02\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK05_02\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK05_02\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T05:57:53.333Z"
+              "WhenOpened": "2024-10-10T05:57:53.333Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_06\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_06\\Form1.cs",
@@ -311,11 +266,12 @@
               "RelativeToolTip": "WEEK09_06\\Form1.cs",
               "ViewState": "AgIAAA4AAADIzMzMzGxAwBgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:33:34.701Z"
+              "WhenOpened": "2024-10-31T03:33:34.701Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_07\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_07\\Form1.cs",
@@ -323,44 +279,48 @@
               "RelativeToolTip": "WEEK09_07\\Form1.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAuwBgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:38:51.302Z"
+              "WhenOpened": "2024-10-31T03:38:51.302Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_04\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_04\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_04\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK09_04\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:17:19.258Z"
+              "WhenOpened": "2024-10-31T03:17:19.258Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 15,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_03\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_03\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_03\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK09_03\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:13:05.721Z"
+              "WhenOpened": "2024-10-31T03:13:05.721Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 16,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_01\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_01\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_01\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK09_01\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T02:18:36.166Z"
+              "WhenOpened": "2024-10-31T02:18:36.166Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK09_03\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK09_03\\Form1.cs",
@@ -368,11 +328,12 @@
               "RelativeToolTip": "WEEK09_03\\Form1.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T03:14:55.463Z"
+              "WhenOpened": "2024-10-31T03:14:55.463Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 18,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK07_01\\Form2.cs",
               "RelativeDocumentMoniker": "WEEK07_01\\Form2.cs",
@@ -380,22 +341,24 @@
               "RelativeToolTip": "WEEK07_01\\Form2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T02:38:43.701Z"
+              "WhenOpened": "2024-10-17T02:38:43.701Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 19,
               "Title": "Form2.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK07_01\\Form2.cs",
               "RelativeDocumentMoniker": "WEEK07_01\\Form2.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK07_01\\Form2.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK07_01\\Form2.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T02:33:15.671Z"
+              "WhenOpened": "2024-10-17T02:33:15.671Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 20,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK07_01\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK07_01\\Form1.cs",
@@ -403,33 +366,36 @@
               "RelativeToolTip": "WEEK07_01\\Form1.cs",
               "ViewState": "AgIAACAAAAAAJzMzM7MUwCsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T02:14:17.413Z"
+              "WhenOpened": "2024-10-17T02:14:17.413Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 21,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK07_01\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK07_01\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK07_01\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK07_01\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T02:01:20.498Z"
+              "WhenOpened": "2024-10-17T02:01:20.498Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 22,
               "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK03_01\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK03_01\\Form1.cs",
               "ToolTip": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK03_01\\Form1.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "WEEK03_01\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T11:03:45.09Z"
+              "WhenOpened": "2024-10-10T11:03:45.09Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 23,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\iksang\\Desktop\\GitHub\\WKU_sophomore\\c#\\20212316_\uC815\uC775\uC0C1\\WEEK05_02\\Form1.cs",
               "RelativeDocumentMoniker": "WEEK05_02\\Form1.cs",
@@ -437,7 +403,8 @@
               "RelativeToolTip": "WEEK05_02\\Form1.cs",
               "ViewState": "AgIAACoAAAAAwszMzMz+vzwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T06:00:12.281Z"
+              "WhenOpened": "2024-10-10T06:00:12.281Z",
+              "EditorCaption": ""
             }
           ]
         }
