@@ -1,0 +1,13 @@
+﻿  game.c
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316정익상(창의실무프로젝트기말)\20212316정익상(창의실무프로젝트기말)\game.c(42,22): warning C4133: '=': 'char [15]'과(와) 'LPCWSTR' 사이의 형식이 호환되지 않습니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316정익상(창의실무프로젝트기말)\20212316정익상(창의실무프로젝트기말)\game.c(55,20): warning C4133: '함수': 'char [15]'과(와) 'LPCWSTR' 사이의 형식이 호환되지 않습니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316정익상(창의실무프로젝트기말)\20212316정익상(창의실무프로젝트기말)\game.c(55,20): warning C4133: '함수': 'char [10]'과(와) 'LPCWSTR' 사이의 형식이 호환되지 않습니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\20212316정익상(창의실무프로젝트기말)\20212316정익상(창의실무프로젝트기말)\game.c(220,9): warning C4013: 'sprintf'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  input.c
+  main.c
+  map.c
+  player.c
+  raycaster.c
+  코드를 생성하고 있습니다...
+game.obj : error LNK2019: _sprintf_RunGameLoop 함수에서 참조되는 확인할 수 없는 외부 기호
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\maze_game\Debug\maze_game.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

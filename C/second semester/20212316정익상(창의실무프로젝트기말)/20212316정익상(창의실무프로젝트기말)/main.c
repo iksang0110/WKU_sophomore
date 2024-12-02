@@ -1,361 +1,169 @@
-Ôªø#define _CRT_SECURE_NO_WARNINGS
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
 #include <windows.h>
-#include <conio.h>
-#include <time.h>
-#include <wchar.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include "game.h"
+#include "map.h"
+#include "player.h"
+#include "raycaster.h"
+#include "input.h"
 
-#define PI 3.14159265359
-#define P2 PI/2
-#define P3 3*PI/2
-#define DR 0.0174533
+/**
+ * @brief FPS∏¶ »≠∏Èø° «•Ω√«œ±‚ ¿ß«— «‘ºˆ
+ * @param game ∞‘¿” ªÛ≈¬ ±∏¡∂√º ∆˜¿Œ≈Õ
+ */
+void DisplayFPS(GameState* game) {
+    static int frameCount = 0;
+    static double lastTime = 0;
+    static double fps = 0;
 
-#define MAP_SIZE 50
-#define SCREEN_WIDTH 160
-#define SCREEN_HEIGHT 45
-#define MAX_ENEMIES 50
-#define MAX_TOWERS 20
+    frameCount++;
+    double currentTime = GetTime();
 
-// Íµ¨Ï°∞Ï≤¥ Ï†ïÏùò
-typedef struct {
-    float x, y;
-    float angle;
-    int health;
-    int power;
-} Player;
+    // 1√ ∏∂¥Ÿ FPS ∞ËªÍ
+    if (currentTime - lastTime > 1.0) {
+        fps = frameCount / (currentTime - lastTime);
+        frameCount = 0;
+        lastTime = currentTime;
 
-typedef struct {
-    float x, y;
-    int health;
-    int active;
-    int pathIndex;
-} Enemy;
-
-typedef struct {
-    float x, y;
-    int type;
-    int power;
-    int active;
-} Tower;
-
-// Ï†ÑÏó≠ Î≥ÄÏàò
-Player player = { 2.0f, 2.0f, 0.0f, 100, 10 };
-Enemy enemies[MAX_ENEMIES];
-Tower towers[MAX_TOWERS];
-int worldMap[MAP_SIZE][MAP_SIZE];
-int pathMap[MAP_SIZE][MAP_SIZE];
-int gameOver = 0;
-int wave = 1;
-int score = 0;
-int enemyCount = 0;
-int isPaused = 0;
-int showMap = 0;
-
-void setColor(int color) {
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+        char title[64];
+        sprintf_s(title, sizeof(title), "Maze Game - FPS: %.2f", fps);
+        SetWindowTextA(game->window, title);
+    }
 }
 
-void gotoxy(int x, int y) {
-    COORD coord;
-    coord.X = x;
-    coord.Y = y;
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-}
-
-void loadMap(const char* filename) {
-    FILE* file = fopen(filename, "r");
-    if (!file) {
-        printf("Map file not found!\n");
-        exit(1);
+/**
+ * @brief ∞‘¿” √ ±‚»≠ ºˆ«‡
+ * @param game ∞‘¿” ªÛ≈¬ ±∏¡∂√º ∆˜¿Œ≈Õ
+ * @param hInstance «¡∑Œ±◊∑• ¿ŒΩ∫≈œΩ∫ «⁄µÈ
+ * @return √ ±‚»≠ º∫∞¯ ø©∫Œ
+ */
+bool GameStartup(GameState* game, HINSTANCE hInstance) {
+    // ∞‘¿” ªÛ≈¬ √ ±‚»≠
+    if (!InitGame(game, hInstance)) {
+        MessageBoxA(NULL, "Failed to initialize game", "Error", MB_ICONERROR);
+        return false;
+    }
+    // ∏  ª˝º∫
+    if (!CreateDefaultMap(&game->map)) {
+        MessageBoxA(NULL, "Failed to create map", "Error", MB_ICONERROR);
+        return false;
+    }
+    // ∑π¿Ãƒ≥Ω∫≈Õ √ ±‚»≠
+    if (!InitRaycaster(game)) {
+        MessageBoxA(NULL, "Failed to initialize raycaster", "Error", MB_ICONERROR);
+        return false;
     }
 
-    for (int y = 0; y < MAP_SIZE; y++) {
-        for (int x = 0; x < MAP_SIZE; x++) {
-            fscanf(file, "%d", &worldMap[y][x]);
+    return true;
+}
+
+/**
+ * @brief ∞‘¿” ∏Æº“Ω∫ ¡§∏Æ
+ * @param game ∞‘¿” ªÛ≈¬ ±∏¡∂√º ∆˜¿Œ≈Õ
+ */
+void GameShutdown(GameState* game) {
+    CleanupRaycaster(game);
+    CleanupMap(&game->map);
+    CleanupInput();
+    CleanupGame(game);
+}
+
+/**
+ * @brief ∏ﬁΩ√¡ˆ √≥∏Æ «‘ºˆ
+ */
+bool ProcessMessages(void) {
+    MSG msg;
+    while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+        if (msg.message == WM_QUIT) {
+            return false;
         }
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
     }
-    fclose(file);
+    return true;
 }
 
-void loadPathMap(const char* filename) {
-    FILE* file = fopen(filename, "r");
-    if (!file) {
-        printf("Path map file not found!\n");
-        exit(1);
+/**
+ * @brief Windows ∏ﬁ¿Œ ¡¯¿‘¡°
+ */
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+{
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
+    UNREFERENCED_PARAMETER(nCmdShow);
+
+    GameState game = { 0 };
+    if (!GameStartup(&game, hInstance)) {
+        return 1;
     }
 
-    for (int y = 0; y < MAP_SIZE; y++) {
-        for (int x = 0; x < MAP_SIZE; x++) {
-            fscanf(file, "%d", &pathMap[y][x]);
-        }
-    }
-    fclose(file);
-}
+    // ¿‘∑¬ ªÛ≈¬ √ ±‚»≠
+    InputState inputState = { 0 };
+    InitInput(&inputState);
 
-// ÏÉâÏÉÅÏóê Îî∞Î•∏ Î≤Ω Î¨∏Ïûê Î∞òÌôò
-char getWallChar(int wallType, float dist) {
-    if (dist > 16) return ' ';
-    if (dist > 8) return '.';
+    MSG msg = { 0 };  // msg ∫Øºˆ∏¶ ø©±‚º≠ «— π¯∏∏ º±æ
 
-    switch (wallType) {
-    case 7:  return '#';  // ÌöåÏÉâ Î≤Ω
-    case 10: return '*';  // Ï†Å
-    case 13: return '@';  // ÌÉÄÏõå
-    case 14: return 'P';  // ÌîåÎ†àÏù¥Ïñ¥ Í∏∞ÏßÄ
-    default: return '|';
-    }
-}
-
-// ÏÉâÏÉÅ ÏÑ§Ï†ï
-void setWallColor(int wallType) {
-    switch (wallType) {
-    case 7:  setColor(8);  break; // ÌöåÏÉâ
-    case 10: setColor(12); break; // Îπ®Í∞ï (Ï†Å)
-    case 13: setColor(14); break; // ÎÖ∏Îûë (ÌÉÄÏõå)
-    case 14: setColor(11); break; // ÌïòÎäòÏÉâ (ÌîåÎ†àÏù¥Ïñ¥ Í∏∞ÏßÄ)
-    default: setColor(7);  break; // Í∏∞Î≥∏ Ìù∞ÏÉâ
-    }
-}
-
-void renderScene() {
-    float rayAngle = player.angle - DR * 30;
-    if (rayAngle < 0) rayAngle += 2 * PI;
-    if (rayAngle > 2 * PI) rayAngle -= 2 * PI;
-
-    for (int r = 0; r < SCREEN_WIDTH; r++) {
-        // Í¥ëÏÑ† Î∞úÏÇ¨ Î°úÏßÅ
-        float aTan = -1 / tan(rayAngle);
-        float nTan = -tan(rayAngle);
-        float dist = 1000000;
-        int wallType = 0;
-
-        // ÏàòÌèâ Ï≤¥ÌÅ¨
-        float hx = player.x, hy = player.y;
-        float distH = 1000000;
-        float horiX = player.x, horiY = player.y;
-
-        if (rayAngle > PI) {
-            hy = (int)player.y - 0.0001;
-            hx = (player.y - hy) * aTan + player.x;
-            float yo = -1;
-            float xo = -yo * aTan;
-
-            for (int i = 0; i < 32; i++) {
-                int mx = (int)hx;
-                int my = (int)hy;
-                if (mx >= 0 && mx < MAP_SIZE && my >= 0 && my < MAP_SIZE && worldMap[my][mx] > 0) {
-                    horiX = hx;
-                    horiY = hy;
-                    distH = sqrt((hx - player.x) * (hx - player.x) + (hy - player.y) * (hy - player.y));
-                    break;
-                }
-                hx += xo;
-                hy += yo;
+    // ∏ﬁ¿Œ ∞‘¿” ∑Á«¡
+    while (game.isRunning) {
+        // ∏ﬁΩ√¡ˆ √≥∏Æ
+        while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+            if (msg.message == WM_QUIT) {
+                game.isRunning = false;
+                break;
             }
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
         }
 
-        // ÏàòÏßÅ Ï≤¥ÌÅ¨
-        float vx = player.x, vy = player.y;
-        float distV = 1000000;
-        float vertX = player.x, vertY = player.y;
+        if (!game.isRunning) break;
 
-        if (rayAngle > P2 && rayAngle < P3) {
-            vx = (int)player.x - 0.0001;
-            vy = (player.x - vx) * nTan + player.y;
-            float xo = -1;
-            float yo = -xo * nTan;
+        // ¿‘∑¬ √≥∏Æ
+        UpdateInput(&inputState, &game);
 
-            for (int i = 0; i < 32; i++) {
-                int mx = (int)vx;
-                int my = (int)vy;
-                if (mx >= 0 && mx < MAP_SIZE && my >= 0 && my < MAP_SIZE && worldMap[my][mx] > 0) {
-                    vertX = vx;
-                    vertY = vy;
-                    distV = sqrt((vx - player.x) * (vx - player.x) + (vy - player.y) * (vy - player.y));
-                    break;
-                }
-                vx += xo;
-                vy += yo;
-            }
-        }
+        // πË∞Ê ¡ˆøÏ±‚ (∞À¿∫ªˆ)
+        RECT rect;
+        GetClientRect(game.window, &rect);
+        HBRUSH blackBrush = CreateSolidBrush(RGB(0, 0, 0));
+        FillRect(game.backBuffer, &rect, blackBrush);
+        DeleteObject(blackBrush);
 
-        // Îçî Í∞ÄÍπåÏö¥ Í±∞Î¶¨ ÏÑ†ÌÉù
-        if (distV < distH) {
-            dist = distV;
-            wallType = worldMap[(int)vertY][(int)vertX];
-        }
-        else {
-            dist = distH;
-            wallType = worldMap[(int)horiY][(int)horiX];
-        }
+        // ≈◊Ω∫∆ÆøÎ ªÁ∞¢«¸ ±◊∏Æ±‚ («√∑π¿ÃæÓ ¿ßƒ°)
+        HBRUSH whiteBrush = CreateSolidBrush(RGB(255, 255, 255));
+        RECT testRect = {
+            (int)(game.player.position.x * 20),  // »≠∏Èø°º≠ ¥ı ≈©∞‘ ∫∏¿Ãµµ∑œ ¿ßƒ° ¡∂¡§
+            (int)(game.player.position.y * 20),
+            (int)(game.player.position.x * 20) + 20,
+            (int)(game.player.position.y * 20) + 20
+        };
+        FillRect(game.backBuffer, &testRect, whiteBrush);
+        DeleteObject(whiteBrush);
 
-        dist = dist * cos(player.angle - rayAngle); // Ïñ¥Ïïà Î†åÏ¶à Î≥¥Ï†ï
+        // «√∑π¿ÃæÓ ¿ßƒ° µπˆ±ÎøÎ √‚∑¬ √ﬂ∞°
+        char debugTitle[128];
+        sprintf_s(debugTitle, sizeof(debugTitle),
+            "Player Position: (%.2f, %.2f)",
+            game.player.position.x,
+            game.player.position.y);
+        SetWindowTextA(game.window, debugTitle);
 
-        // Î≤Ω ÎÜíÏù¥ÏôÄ ÏúÑÏπò Í≥ÑÏÇ∞
-        float lineH = (MAP_SIZE * SCREEN_HEIGHT) / (dist + 0.0001);
-        if (lineH > SCREEN_HEIGHT) lineH = SCREEN_HEIGHT;
-        float lineO = (SCREEN_HEIGHT - lineH) / 2;
+        // πÈ πˆ∆€∏¶ »≠∏Èø° ±◊∏Æ±‚
+        BitBlt(game.deviceContext, 0, 0, game.screenWidth, game.screenHeight,
+            game.backBuffer, 0, 0, SRCCOPY);
 
-        // Î≤Ω Í∑∏Î¶¨Í∏∞
-        for (int y = 0; y < SCREEN_HEIGHT; y++) {
-            gotoxy(r, y);
-            if (y >= lineO && y <= lineO + lineH) {
-                setWallColor(wallType);
-                printf("%c", getWallChar(wallType, dist));
-            }
-            else {
-                setColor(0);
-                printf(" ");
-            }
-        }
+        // FPS «•Ω√
+        DisplayFPS(&game);
 
-        rayAngle += DR * (60.0f / SCREEN_WIDTH);
-        if (rayAngle < 0) rayAngle += 2 * PI;
-        if (rayAngle > 2 * PI) rayAngle -= 2 * PI;
+        // «¡∑π¿” ¡¶«—
+        Sleep(1);
     }
+
+    GameShutdown(&game);
+    return (int)msg.wParam;
 }
 
-void drawMinimap() {
-    system("cls");
-    for (int y = 0; y < MAP_SIZE; y++) {
-        for (int x = 0; x < MAP_SIZE; x++) {
-            if ((int)player.x == x && (int)player.y == y) {
-                setColor(11);
-                printf("P");
-            }
-            else {
-                setWallColor(worldMap[y][x]);
-                switch (worldMap[y][x]) {
-                case 0:  printf(" "); break;
-                case 7:  printf("#"); break;
-                case 10: printf("*"); break;
-                case 13: printf("@"); break;
-                case 14: printf("B"); break;
-                default: printf("."); break;
-                }
-            }
-        }
-        printf("\n");
-    }
+#ifdef _DEBUG
+int main(void) {
+    return WinMain(GetModuleHandle(NULL), NULL, GetCommandLine(), SW_SHOWNORMAL);
 }
-
-void handleInput() {
-    if (!_kbhit()) return;
-
-    char key = _getch();
-    float moveSpeed = 0.2f;
-    float rotSpeed = 0.1f;
-
-    float newX = player.x;
-    float newY = player.y;
-
-    switch (key) {
-    case 'w':
-        newX += cos(player.angle) * moveSpeed;
-        newY += sin(player.angle) * moveSpeed;
-        break;
-    case 's':
-        newX -= cos(player.angle) * moveSpeed;
-        newY -= sin(player.angle) * moveSpeed;
-        break;
-    case 'a':
-        newX += cos(player.angle - P2) * moveSpeed;
-        newY += sin(player.angle - P2) * moveSpeed;
-        break;
-    case 'd':
-        newX += cos(player.angle + P2) * moveSpeed;
-        newY += sin(player.angle + P2) * moveSpeed;
-        break;
-    case 'm':
-        showMap = !showMap;
-        break;
-    case 'p':
-        isPaused = !isPaused;
-        break;
-    case 'r':
-        player.angle += PI;
-        if (player.angle > 2 * PI) player.angle -= 2 * PI;
-        break;
-    case ' ':
-        // Ï¥ùÏïå Î∞úÏÇ¨ Î°úÏßÅ
-        break;
-    case 27: // ESC
-        gameOver = 1;
-        break;
-    case 75: // Left arrow
-        player.angle -= rotSpeed;
-        if (player.angle < 0) player.angle += 2 * PI;
-        break;
-    case 77: // Right arrow
-        player.angle += rotSpeed;
-        if (player.angle > 2 * PI) player.angle -= 2 * PI;
-        break;
-    }
-
-    if (worldMap[(int)newY][(int)newX] == 0) {
-        player.x = newX;
-        player.y = newY;
-    }
-}
-
-void drawUI() {
-    gotoxy(0, SCREEN_HEIGHT);
-    setColor(7);
-    printf("Health: %d | Score: %d | Wave: %d | ESC: Exit | P: Pause | M: Map",
-        player.health, score, wave);
-    if (isPaused) {
-        gotoxy(SCREEN_WIDTH / 2 - 5, SCREEN_HEIGHT / 2);
-        printf("PAUSED");
-    }
-}
-
-int main() {
-    // ÏΩòÏÜî ÏÑ§Ï†ï
-    system("mode con cols=160 lines=46");
-    system("title 3D Tower Defense");
-
-    // ÏΩòÏÜî Ìè∞Ìä∏ ÏÑ§Ï†ï
-    CONSOLE_FONT_INFOEX cfi;
-    cfi.cbSize = sizeof(cfi);
-    cfi.nFont = 0;
-    cfi.dwFontSize.X = 8;
-    cfi.dwFontSize.Y = 12;
-    cfi.FontFamily = FF_DONTCARE;
-    cfi.FontWeight = FW_NORMAL;
-    wcscpy(cfi.FaceName, L"Terminal");
-    SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
-
-    // Ïª§ÏÑú Ïà®Í∏∞Í∏∞
-    CONSOLE_CURSOR_INFO cursorInfo = { 1, FALSE };
-    SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
-
-    // Í≤åÏûÑ Ï¥àÍ∏∞Ìôî
-    loadMap("map1.txt");
-    loadPathMap("map1_bfs.txt");
-
-    // Í≤åÏûÑ Î£®ÌîÑ
-    while (!gameOver) {
-        if (!isPaused) {
-            if (showMap) {
-                drawMinimap();
-            }
-            else {
-                renderScene();
-            }
-            drawUI();
-        }
-        handleInput();
-        Sleep(30);
-    }
-
-    // Í≤åÏûÑ Ï¢ÖÎ£å
-    system("cls");
-    printf("\n\n  Game Over!\n");
-    printf("  Final Score: %d\n", score);
-    printf("  Wave Reached: %d\n", wave);
-
-    return 0;
-}
+#endif

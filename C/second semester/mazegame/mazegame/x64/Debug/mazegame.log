@@ -1,0 +1,4 @@
+﻿  main.c
+input.obj : error LNK2005: handle_input이(가) game.obj에 이미 정의되어 있습니다.
+render.obj : error LNK2005: render이(가) main.obj에 이미 정의되어 있습니다.
+C:\Users\iksang\Desktop\GitHub\WKU_sophomore\C\second semester\mazegame\x64\Debug\mazegame.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.

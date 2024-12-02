@@ -15,22 +15,40 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="game.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="map.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="player.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="raycaster.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="input.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map1.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
-    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map1_bfs.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
-    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map2.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
-    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map2_bfs.txt">
-      <Filter>소스 파일</Filter>
-    </Text>
+    <ClInclude Include="game.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="raycaster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
