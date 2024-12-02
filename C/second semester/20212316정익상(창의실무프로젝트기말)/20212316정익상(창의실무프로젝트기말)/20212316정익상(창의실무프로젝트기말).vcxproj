@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="소스.c" />
+    <ClCompile Include="main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map1.txt" />
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map1_bfs.txt" />
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map2.txt" />
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map2_bfs.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

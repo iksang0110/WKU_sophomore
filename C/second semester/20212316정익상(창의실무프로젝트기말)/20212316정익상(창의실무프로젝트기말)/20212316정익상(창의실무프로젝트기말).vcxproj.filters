@@ -15,8 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="소스.c">
+    <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map1.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map1_bfs.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map2.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\..\Downloads\mazer\resources\map2_bfs.txt">
+      <Filter>소스 파일</Filter>
+    </Text>
   </ItemGroup>
 </Project>
